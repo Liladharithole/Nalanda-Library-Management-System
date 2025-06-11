@@ -1,10 +1,12 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-import cors from "cors";
+
 import authRoutes from "./routes/authRoutes.js";
 import bookRoutes from "./routes/bookRoutes.js";
 import borrowRoutes from "./routes/borrowRoutes.js";
+import reportRoutes from "./routes/reportRoutes.js";
+
 // config dotenv
 dotenv.config();
 // connect to database
@@ -12,6 +14,7 @@ connectDB();
 const app = express();
 // middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send("Welcome to Nalanda Library Management System");
@@ -21,8 +24,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/books", bookRoutes);
 app.use("/api", borrowRoutes);
-
-
+app.use("/api/reports", reportRoutes);
 
 
 const PORT = process.env.PORT;
