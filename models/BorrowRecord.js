@@ -23,4 +23,4 @@ const borrowSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("BorrowRecord", borrowSchema);
+export default mongoose.model("BorrowRecord", borrowSchema);
