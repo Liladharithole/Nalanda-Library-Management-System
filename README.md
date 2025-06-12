@@ -229,7 +229,7 @@ Nalanda-Library-Management-System/
 
 All tested API endpoints are included in the Postman collection:
 
-📁 [Download Nalanda-Library.postman_collection.json](./Nalanda-Library.postman_collection.json)
+📁 [Download Nalanda-Library.postman_collection.json](https://liladhar-2747555.postman.co/workspace/Liladhar's-Workspace~ad8f90e0-25dd-4928-8e07-e7b847cabdf9/collection/45395490-790ef507-e177-459e-9915-f6119eb06e3f?action=share&source=collection_link&creator=45395490)
 
 ## Additional Notes
 
