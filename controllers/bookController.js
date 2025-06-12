@@ -1,14 +1,26 @@
 import Book from "../models/Book.js";
 
 // Add a new book (Admin)
+// export const addBook = async (req, res) => {
+//   try {
+//     const book = await Book.create(req.body);
+//     res.status(201).json(book);
+//   } catch (err) {
+//     res.status(400).json({ message: err.message });
+//   }
+// };
 export const addBook = async (req, res) => {
   try {
     const book = await Book.create(req.body);
     res.status(201).json(book);
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    if (err.code === 11000) {
+      return res.status(400).json({ message: 'Book with this ISBN already exists' });
+    }
+    res.status(500).json({ message: err.message });
   }
 };
+
 
 // Update a book (Admin)
 export const updateBook = async (req, res) => {

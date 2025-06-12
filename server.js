@@ -6,6 +6,8 @@ import authRoutes from "./routes/authRoutes.js";
 import bookRoutes from "./routes/bookRoutes.js";
 import borrowRoutes from "./routes/borrowRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
+import { graphqlHTTP } from "express-graphql";
+import { schema } from "./graphql/schema.js";
 
 // config dotenv
 dotenv.config();
@@ -26,6 +28,11 @@ app.use("/api/books", bookRoutes);
 app.use("/api", borrowRoutes);
 app.use("/api/reports", reportRoutes);
 
+// GraphQL endpoint
+app.use("/graphql", graphqlHTTP({
+    schema,
+    graphiql: true,
+}));
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

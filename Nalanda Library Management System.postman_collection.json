@@ -1,0 +1,527 @@
+{
+  "info": {
+    "_postman_id": "790ef507-e177-459e-9915-f6119eb06e3f",
+    "name": "Nalanda Library Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45395490",
+    "_collection_link": "https://liladhar-2747555.postman.co/workspace/Liladhar's-Workspace~ad8f90e0-25dd-4928-8e07-e7b847cabdf9/collection/45395490-790ef507-e177-459e-9915-f6119eb06e3f?action=share&source=collection_link&creator=45395490"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register_Admin",
+          "request": {
+            "auth": {
+              "type": "jwt",
+              "jwt": [
+                {
+                  "key": "algorithm",
+                  "value": "HS256",
+                  "type": "string"
+                },
+                {
+                  "key": "isSecretBase64Encoded",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "payload",
+                  "value": "{}",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "headerPrefix",
+                  "value": "Bearer",
+                  "type": "string"
+                },
+                {
+                  "key": "queryParamKey",
+                  "value": "token",
+                  "type": "string"
+                },
+                {
+                  "key": "header",
+                  "value": "{}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzYxMSwiZXhwIjoxNzUwMzA4NDExfQ.OMlDWfCwTVOW9dBnAE7s1HtYlwKOV-WR0sPNv-VwhzI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Liladhar Admin\",\n  \"email\": \"liladhar@admin.com\",\n  \"password\": \"Admin@123\",\n  \"role\": \"admin\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/auth/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register_Member",
+          "request": {
+            "auth": {
+              "type": "jwt",
+              "jwt": [
+                {
+                  "key": "algorithm",
+                  "value": "HS256",
+                  "type": "string"
+                },
+                {
+                  "key": "isSecretBase64Encoded",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "payload",
+                  "value": "{}",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "headerPrefix",
+                  "value": "Bearer",
+                  "type": "string"
+                },
+                {
+                  "key": "queryParamKey",
+                  "value": "token",
+                  "type": "string"
+                },
+                {
+                  "key": "header",
+                  "value": "{}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzYxMSwiZXhwIjoxNzUwMzA4NDExfQ.OMlDWfCwTVOW9dBnAE7s1HtYlwKOV-WR0sPNv-VwhzI",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YzRlM2IxMGYwNjk0YzkyNmJmNiIsInJvbGUiOiJtZW1iZXIiLCJpYXQiOjE3NDk3MDM3NTgsImV4cCI6MTc1MDMwODU1OH0.YrSpc6eBdOwSzUziy1EDDb7nRuTMfXXkuwGxkUCufNc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Liladhar Member\",\n  \"email\": \"liladhar@member.com\",\n  \"password\": \"member@123\",\n  \"role\": \"member\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/auth/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login_Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzkzMSwiZXhwIjoxNzUwMzA4NzMxfQ.l03IdPtZYV9vB_6eA_3eFs8tOulbvc656GlpAT85WJA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \n  \"email\": \"liladhar@admin.com\",\n  \"password\": \"Admin@123\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login_Member",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzkzMSwiZXhwIjoxNzUwMzA4NzMxfQ.l03IdPtZYV9vB_6eA_3eFs8tOulbvc656GlpAT85WJA",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YzRlM2IxMGYwNjk0YzkyNmJmNiIsInJvbGUiOiJtZW1iZXIiLCJpYXQiOjE3NDk3MDQxNjIsImV4cCI6MTc1MDMwODk2Mn0.K73yqXrqXl7rBwz4pLVldbx3q2yWju54gS7Dvz34cS4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\n  \"email\": \"liladhar@member.com\",\n  \"password\": \"member@123\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "auth", "login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Admin_Only",
+          "item": [
+            {
+              "name": "Adding_Books",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzkzMSwiZXhwIjoxNzUwMzA4NzMxfQ.l03IdPtZYV9vB_6eA_3eFs8tOulbvc656GlpAT85WJA",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YzRlM2IxMGYwNjk0YzkyNmJmNiIsInJvbGUiOiJtZW1iZXIiLCJpYXQiOjE3NDk3MDQxNjIsImV4cCI6MTc1MDMwODk2Mn0.K73yqXrqXl7rBwz4pLVldbx3q2yWju54gS7Dvz34cS4",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Clean Code\",\n  \"author\": \"Robert C. Martin\",\n  \"ISBN\": \"9780132350884\",\n  \"genre\": \"Programming\",\n  \"publicationDate\": \"2008-08-01\",\n  \"copies\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4000/api/books",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "4000",
+                  "path": ["api", "books"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Updating_Books",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzkzMSwiZXhwIjoxNzUwMzA4NzMxfQ.l03IdPtZYV9vB_6eA_3eFs8tOulbvc656GlpAT85WJA",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"copies\": 10,\n  \"genre\": \"Updated Genre\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4000/api/books/684a612f3ec5ff91f2e03705",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "4000",
+                  "path": ["api", "books", "684a612f3ec5ff91f2e03705"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete_Books",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzkzMSwiZXhwIjoxNzUwMzA4NzMxfQ.l03IdPtZYV9vB_6eA_3eFs8tOulbvc656GlpAT85WJA",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"copies\": 10,\n  \"genre\": \"Updated Genre\"\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:4000/api/books/684a612f3ec5ff91f2e03705",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "4000",
+                  "path": ["api", "books", "684a612f3ec5ff91f2e03705"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Borrowing_Books_User",
+          "item": [
+            {
+              "name": "Barrow",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzkzMSwiZXhwIjoxNzUwMzA4NzMxfQ.l03IdPtZYV9vB_6eA_3eFs8tOulbvc656GlpAT85WJA",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YzRlM2IxMGYwNjk0YzkyNmJmNiIsInJvbGUiOiJtZW1iZXIiLCJpYXQiOjE3NDk3MDU3MjcsImV4cCI6MTc1MDMxMDUyN30.rODcHZd8aA4HhRsBoEu9tpL03r2cpLnfFRJA8fqofts",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"bookId\": \"684a612f3ec5ff91f2e03705\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4000/api/borrow",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "4000",
+                  "path": ["api", "borrow"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Return",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzkzMSwiZXhwIjoxNzUwMzA4NzMxfQ.l03IdPtZYV9vB_6eA_3eFs8tOulbvc656GlpAT85WJA",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YzRlM2IxMGYwNjk0YzkyNmJmNiIsInJvbGUiOiJtZW1iZXIiLCJpYXQiOjE3NDk3MDQxNjIsImV4cCI6MTc1MDMwODk2Mn0.K73yqXrqXl7rBwz4pLVldbx3q2yWju54gS7Dvz34cS4",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"borrowId\": \"684a62563ec5ff91f2e0370d\"\n}\n\n\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4000/api/return",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "4000",
+                  "path": ["api", "return"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "History",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwMzkzMSwiZXhwIjoxNzUwMzA4NzMxfQ.l03IdPtZYV9vB_6eA_3eFs8tOulbvc656GlpAT85WJA",
+                    "type": "text",
+                    "disabled": true
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YzRlM2IxMGYwNjk0YzkyNmJmNiIsInJvbGUiOiJtZW1iZXIiLCJpYXQiOjE3NDk3MDQxNjIsImV4cCI6MTc1MDMwODk2Mn0.K73yqXrqXl7rBwz4pLVldbx3q2yWju54gS7Dvz34cS4",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"borrowId\": \"684a62563ec5ff91f2e0370d\"\n}\n\n\n"
+                },
+                "url": {
+                  "raw": "http://localhost:4000/api/history",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "4000",
+                  "path": ["api", "history"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "All_Books",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YzRlM2IxMGYwNjk0YzkyNmJmNiIsInJvbGUiOiJtZW1iZXIiLCJpYXQiOjE3NDk3MDQxNjIsImV4cCI6MTc1MDMwODk2Mn0.K73yqXrqXl7rBwz4pLVldbx3q2yWju54gS7Dvz34cS4",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:4000/api/books",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "4000",
+                  "path": ["api", "books"]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "Most_Borrowed",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwNjMwNywiZXhwIjoxNzUwMzExMTA3fQ.tPq1mwY1dMRkucMFQsNewW0imsGZEBt1gWqmdDu-MQs",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4000/api/reports/most-borrowed",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "reports", "most-borrowed"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Active_Members",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwNjMwNywiZXhwIjoxNzUwMzExMTA3fQ.tPq1mwY1dMRkucMFQsNewW0imsGZEBt1gWqmdDu-MQs",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4000/api/reports/active-members",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "reports", "active-members"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Book_Availability",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGE1YmJiM2IxMGYwNjk0YzkyNmJmMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTcwNjMwNywiZXhwIjoxNzUwMzExMTA3fQ.tPq1mwY1dMRkucMFQsNewW0imsGZEBt1gWqmdDu-MQs",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4000/api/reports/book-availability",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "reports", "book-availability"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

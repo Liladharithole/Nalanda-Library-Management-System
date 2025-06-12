@@ -5,11 +5,19 @@ It provides secure user authentication, role-based access control, book manageme
 
 ---
 
+## 🙏 Acknowledgements
+
+- Built with ❤️ for Heumn Interactive Pvt. Ltd. assessment
+- Special thanks to the open-source community for amazing tools and libraries and AI for the code walkthrough like ChatGPT and Windsurf AI Code Editor
+
+---
+
 ## 🔧 Tech Stack
 
 - Node.js (v18+)
 - Express.js
 - MongoDB + Mongoose
+- GraphQL
 - JWT Authentication
 - Role-Based Access Control (Admin/Member)
 - Postman (for API testing)
@@ -21,8 +29,8 @@ It provides secure user authentication, role-based access control, book manageme
 ### 📁 Clone the repo:
 
 ```bash
-git clone
-cd nalanda-library-backend
+git clone https://github.com/Liladharithole/Nalanda-Library-Management-System.git
+cd Nalanda-Library-Management-System
 ```
 
 ### 📦 Install dependencies:
@@ -47,6 +55,14 @@ JWT_EXPIRE=7d
 ```bash
 npm run dev
 ```
+
+---
+
+## 🧪 Testing with Postman
+
+You can test each endpoint using [Postman](https://postman.com) or [Thunder Client](https://www.thunderclient.com/).
+
+Make sure to **login** first and add the token to the `Authorization` header for protected routes.
 
 ---
 
@@ -111,38 +127,111 @@ Supports pagination & filters via query params:
 
 ---
 
-## 🧪 Testing with Postman
+## 🚀 GraphQL API
 
-You can test each endpoint using [Postman](https://postman.com) or [Thunder Client](https://www.thunderclient.com/).
+Nalanda Library Management System provides a powerful GraphQL API alongside the REST API. The GraphQL endpoint is available at `/graphql`.
 
-Make sure to **login** first and add the token to the `Authorization` header for protected routes.
+### 📝 Available Queries
+
+1. **Get All Books**
+
+   ```graphql
+   query {
+     books {
+       _id
+       title
+       author
+       genre
+       availableCopies
+       totalCopies
+     }
+   }
+   ```
+
+2. **Get Book by ID**
+
+   ```graphql
+   query {
+     book(id: "book_id_here") {
+       title
+       author
+       description
+       genre
+       publishedYear
+       isbn
+     }
+   }
+   ```
+
+3. **Get User's Borrowed Books**
+   ```graphql
+   query {
+     myBorrowedBooks {
+       book {
+         title
+         author
+       }
+       borrowedDate
+       dueDate
+       status
+     }
+   }
+   ```
+
+### 🧪 Testing with GraphQL Playground
+
+You can test the GraphQL API using the built-in GraphQL Playground at `http://localhost:4000/graphql` when the server is running in development mode.
 
 ---
 
-## 📂 Folder Structure
+## 📂 Project Structure
 
 ```
-/controllers
-/routes
-/models
-/middleware
-/config
-.env
-server.js
-README.md
+Nalanda-Library-Management-System/
+├── config/                    # Configuration files
+│   └── db.js                 # Database connection configuration
+│
+├── controllers/             # Route controllers (MVC pattern)
+│   ├── authController.js     # Authentication logic
+│   ├── bookController.js     # Book-related operations
+│   ├── borrowController.js   # Book borrowing/returning logic
+│   └── reportController.js   # Reporting and analytics
+│
+├── graphql/                 # GraphQL implementation
+│   └── schema.js            # GraphQL type definitions
+│
+├── middleware/              # Custom express middleware
+│   └── authMiddleware.js     # Authentication & authorization middleware
+│
+├── models/                  # Mongoose models
+│   ├── Book.js              # Book model
+│   ├── User.js              # User model
+│   └── BorrowRecord.js      # Book borrowing records
+│
+├── routes/                  # API route definitions
+│   ├── authRoutes.js        # Authentication routes
+│   ├── bookRoutes.js        # Book management routes
+│   ├── borrowRoutes.js      # Book borrowing routes
+│   └── reportRoutes.js      # Reporting routes
+│
+├── .env                    # Environment variables
+├── .gitignore              # Git ignore file
+├── package.json            # Project metadata and dependencies
+├── README.md               # Project documentation
+└── server.js               # Application entry point
 ```
 
 ---
 
-## 🚀 Deployment (Optional)
-
-- Deploy backend on AWS EC2 or Render
-- Use MongoDB Atlas for production database
-- Add domain & HTTPS for production-ready deployment
-
 ---
 
-## 📌 Additional Notes
+## 📬 Postman Collection
+
+All tested API endpoints are included in the Postman collection:
+
+📁 [Download Nalanda-Library.postman_collection.json](./Nalanda-Library.postman_collection.json)
+
+## Additional Notes
 
 - Use Git for version control.
 - Use GitHub for code hosting.
